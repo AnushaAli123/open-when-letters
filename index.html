@@ -1,41 +1,408 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-<title>Open When Letters ❤️</title>
-style.css
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday My Love ❤️</title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#ffe6ee,#fff6f8);
+text-align:center;
+color:#333;
+}
+
+.hero{
+padding:50px 20px;
+}
+
+.hero h1{
+color:#d63384;
+font-size:3rem;
+}
+.hero p{
+font-size:1.1rem;
+
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+  
+.envelope{
+background:white;
+border-radius:20px;
+padding:30px;
+cursor:pointer;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+transition:.3s;
+}
+
+.envelope:hover{
+transform:translateY(-8px);
+}
+
+.envelope h3{
+margin:0;
+color:#d63384;
+}
+
+.messageBox{
+display:none;
+background:white;
+max-width:800px;
+margin:40px auto;
+padding:30px;
+border-radius:20px;
+box-shadow:0 4px 20px rgba(0,0,0,0.15);
+}
+
+.messageBox h2{
+color:#d63384;
+}
+  
+button{
+background:#d63384;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:30px;
+cursor:pointer;
+}
+
+.footer{
+margin:50px 0;
+color:#888;
+}
+
+</style>
 </head>
 
 <body>
 
+<div class="hero">
 <h1>Happy Birthday My Love ❤️</h1>
 
-<div class="letter">
-<h2>💌 Open When You're Missing Me</h2>
-
-<p>No matter where we are, my heart is always with you.</p>
-
+<p>
+I made this little collection of letters for you.
+Whenever you need one, simply open it. 💌
+</p>
+99
 </div>
-
-<div class="letter">
-<h2>🎂 Open On Your Birthday</h2>
-
-<p>Happy Birthday to the most special person in my life.</p>
-
+100
+ 
+101
+<div class="container">
+102
+ 
+103
+<div class="envelope" onclick="openLetter('birthday')">
+104
+<h3>🎂 Open On Your Birthday</h3>
+105
 </div>
-  
-<div class="letter">
-<h2>🤗 Open When You Need a Hug</h2>
-
-<p>Imagine me wrapping my arms around you right now.</p>
-
+106
+ 
+107
+<div class="envelope" onclick="openLetter('miss')">
+108
+<h3>💌 Open When You Miss Me</h3>
+109
 </div>
-<div class="letter">
-
-<h2>🌟 Open When You Need Motivation</h2>
-<p>I believe in you more than you know.</p>
+110
+ 
+111
+<div class="envelope" onclick="openLetter('sad')">
+112
+<h3>🤗 Open When You're Sad</h3>
+113
 </div>
-
+114
+ 
+115
+<div class="envelope" onclick="openLetter('motivation')">
+116
+<h3>🌟 Open When You Need Motivation</h3>
+117
+</div>
+118
+ 
+119
+<div class="envelope" onclick="openLetter('laugh')">
+120
+<h3>😂 Open When You Need a Laugh</h3>
+121
+</div>
+122
+ 
+123
+<div class="envelope" onclick="openLetter('stress')">
+124
+<h3>☁️ Open When You're Stressed</h3>
+125
+</div>
+126
+ 
+127
+<div class="envelope" onclick="openLetter('sleep')">
+128
+<h3>🌙 Open When You Can't Sleep</h3>
+129
+</div>
+130
+ 
+131
+<div class="envelope" onclick="openLetter('last')">
+132
+<h3>🎁 Open Last</h3>
+133
+</div>
+134
+ 
+135
+</div>
+136
+ 
+137
+<div class="messageBox" id="messageBox"></div>
+138
+ 
+139
+<div class="footer">
+140
+Made with love ❤️
+141
+</div>
+142
+ 
+143
+<script>
+144
+ 
+145
+const letters = {
+146
+ 
+147
+birthday: `
+148
+<h2>🎂 Happy Birthday My Love</h2>
+149
+ 
+150
+<p>
+151
+Today is all about celebrating the incredible person you are.
+152
+Thank you for your kindness, your patience, your support, and the happiness you bring into my life every day.
+153
+I hope this year brings you success, good health, laughter, and every beautiful thing your heart wishes for.
+154
+</p>
+155
+ 
+156
+<p>
+157
+Happy Birthday, my love. ❤️
+158
+</p>
+159
+`,
+160
+ 
+161
+miss: `
+162
+<h2>💌 When You Miss Me</h2>
+163
+ 
+164
+<p>
+165
+If you're reading this, I'm probably not right beside you.
+166
+Just remember that no matter the distance, my heart is always with you.
+167
+You are one of my favourite people in the entire world and I think about you more often than you know.
+168
+</p>
+169
+`,
+170
+ 
+171
+sad: `
+172
+<h2>🤗 When You're Sad</h2>
+173
+ 
+174
+<p>
+175
+Bad days happen.
+176
+Please don't be too hard on yourself.
+177
+You are so much stronger than you realize and you've overcome every difficult chapter before this one too.
+178
+I'm always cheering for you.
+179
+</p>
+180
+`,
+181
+ 
+182
+motivation: `
+183
+<h2>🌟 When You Need Motivation</h2>
+184
+ 
+185
+<p>
+186
+You are capable of amazing things.
+187
+You have talent, determination and a heart that never gives up.
+188
+Take one step at a time and keep going.
+189
+I believe in you even on the days you struggle to believe in yourself.
+190
+</p>
+191
+`,
+192
+ 
+193
+laugh: `
+194
+<h2>😂 When You Need a Laugh</h2>
+195
+ 
+196
+<p>
+197
+Remember all the random conversations we've had that made absolutely no sense?
+198
+Those are still some of my favourite moments.
+199
+Thank you for making life fun and full of laughter.
+200
+</p>
+201
+`,
+202
+ 
+203
+stress: `
+204
+<h2>☁️ When You're Stressed</h2>
+205
+ 
+206
+<p>
+207
+Take a deep breath.
+208
+Everything does not need to be solved today.
+209
+Rest for a while, have some water and remember that you're doing better than you think.
+210
+</p>
+211
+`,
+212
+ 
+213
+sleep: `
+214
+<h2>🌙 When You Can't Sleep</h2>
+215
+ 
+216
+<p>
+217
+Close your eyes.
+218
+Imagine we're together watching our favourite show or having one of our endless conversations.
+219
+I hope you get the peaceful rest you deserve.
+220
+Goodnight, my love.
+221
+</p>
+222
+`,
+223
+ 
+224
+last: `
+225
+<h2>🎁 Open Last</h2>
+226
+ 
+227
+<p>
+228
+If you've opened this letter, you've reached the end of the collection.
+229
+I hope these little notes reminded you how loved and appreciated you are.
+230
+</p>
+231
+ 
+232
+<p>
+233
+Thank you for being part of my life.
+234
+Thank you for every memory, every laugh and every moment we've shared.
+235
+</p>
+236
+ 
+237
+<h3>❤️ I love you. Happy Birthday. ❤️</h3>
+238
+`
+239
+};
+240
+ 
+241
+function openLetter(letter){
+242
+document.getElementById('messageBox').style.display='block';
+243
+document.getElementById('messageBox').innerHTML=letters[letter];
+244
+window.scrollTo({
+245
+top:document.getElementById('messageBox').offsetTop-50,
+246
+behavior:'smooth'
+247
+});
+248
+}
+249
+ 
+250
+</script>
+251
+ 
+252
 </body>
-
+253
 </html>
